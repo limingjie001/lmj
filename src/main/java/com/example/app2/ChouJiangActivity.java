@@ -16,8 +16,7 @@ import android.widget.Toast;
 
 public class ChouJiangActivity extends AppCompatActivity {
 
-
-
+//测试注释
 
     int index = 1;
     int jpMax = 6;//照片数量
