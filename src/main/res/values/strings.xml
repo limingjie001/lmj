@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">抽奖小程序2 </string>
+    <string name="login">登 录</string>
+    <string name="register">注 册</string>
+    <string name="user">用户名：</string>
+    <string name="password">密 码：</string>
+    <string name="JiangPin">百万大奖等你拿</string>
+    <string name="ChouJiang">点击浏览奖品</string>
+    <string name="click">点击抽奖</string>
+    <string name="yes">领取奖品</string>
+    <string name="InuputUser">请输入用户名</string>
+    <string name="InputPsw">请输入密码</string>
+    <string name="tel">注册手机号</string>
+    <string name="SurePsw">确认密码</string>
+    <string name="titleJP">所有奖品如下</string>
+</resources>
