@@ -53,10 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
 
-//                Log.i("editText2", editText2.getText().toString());
-//                Log.i("editText", editText.getText().toString());
-//                Log.i("name", data.get(0).getUsername());
-//                Log.i("psw", data.get(0).getPassword());
+
 
         if(editText2.getText().toString().equals(data.get(0).getUsername())&&editText.getText().toString().equals(data.get(0).getPassword())){
 
