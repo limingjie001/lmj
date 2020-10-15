@@ -54,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
 
 
+//                Bundle bundle2 = this.getIntent().getExtras();
+//                String password1 = bundle2.getString("password1");
+//                String username1 = bundle2.getString("username1");
 
-        if(editText2.getText().toString().equals(data.get(0).getUsername())&&editText.getText().toString().equals(data.get(0).getPassword())){
+                if(editText2.getText().toString().equals(data.get(0).getUsername())&&editText.getText().toString().equals(data.get(0).getPassword())){
+
 
              startActivity(intent);
 

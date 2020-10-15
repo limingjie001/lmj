@@ -46,8 +46,17 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.i(password1, " password1");
 
                 Toast.makeText(RegisterActivity.this,"注册成功，请登录",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+
                 if(password1.equals(password22)){
+                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString("username1",username1);
+//                    bundle.putString("password1",password1);
+
+
+               //     intent.putExtra(bundle);
+                    intent.setClass(RegisterActivity.this,MainActivity.class);
 
                     startActivity(intent);
 

@@ -1,8 +1,10 @@
 package com.example.app2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,11 +27,21 @@ public class ChouJiangActivity extends AppCompatActivity {
 
 
 
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //销毁前存值
+        outState.putInt("index",index);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choujiang);
+        //如果有暂存值，取出
+        if(savedInstanceState != null){
+            index = savedInstanceState.getInt("index");
+        }
+
         final Button button1 = findViewById(R.id.button1);//抽奖
         final Button button2 = findViewById(R.id.button2);//领奖
         Button button3 = findViewById(R.id.button3);//浏览
@@ -75,14 +87,23 @@ public class ChouJiangActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder  = new AlertDialog.Builder(ChouJiangActivity.this);
+                 AlertDialog.Builder builder  = new AlertDialog.Builder(ChouJiangActivity.this);
                 builder.setTitle("恭喜你中奖了" ) ;
 
+                builder.setPositiveButton("确认领奖", new DialogInterface.OnClickListener(){
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(ChouJiangActivity.this,"奖品已领取",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ChouJiangActivity.this, JiangPinActivity.class);
+                        startActivity(intent);
+                    }
 
 
-                builder.setPositiveButton("确认领奖",null );
+                });
                 builder.setNegativeButton("不要奖品", null);
                 builder.show();
+
             }
         });
     }
