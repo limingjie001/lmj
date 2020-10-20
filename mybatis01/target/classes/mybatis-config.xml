@@ -14,7 +14,7 @@
             </dataSource>
         </environment>
     </environments>
-
+<!--每注册一个mapper就写一个-->
     <mappers>
         <mapper resource="com/mybatis/dao/UserMapper.xml"/>
     </mappers>
