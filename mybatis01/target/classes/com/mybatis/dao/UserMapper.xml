@@ -6,6 +6,6 @@
 <!--namespace写接口名，id写方法名，resultType写实体类名-->
 <mapper namespace="com.mybatis.dao.UserMapper">
     <select id="getUserList" resultType="com.mybatis.entry.User">
-    select * from user 
+    select * from user
   </select>
 </mapper>

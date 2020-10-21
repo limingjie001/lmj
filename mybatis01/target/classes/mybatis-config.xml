@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <environments default="development">
+<!--        可以写多个环境，但是每次只能生效一个-->
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
@@ -13,6 +14,7 @@
                 <property name="password" value="root"/>
             </dataSource>
         </environment>
+
     </environments>
 <!--每注册一个mapper就写一个-->
     <mappers>
