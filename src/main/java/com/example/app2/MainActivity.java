@@ -21,19 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     static {
 
-        data.add(new User(123,"aaa","bbb"));
+        data.add(new User(123,"aaaaaa","bbbbbb"));
 
 
     }
 
-//    //根据结果显示不同的提示
-//    private void showToast(boolean isRes){
-//        if(isRes){
-//            Toast.makeText(MainActivity.this,"恭喜答对了",Toast.LENGTH_SHORT).show();
-//        }else{
-//            Toast.makeText(MainActivity.this,"答错了，好好想想",Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
 
 
 
@@ -41,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Button button1 = findViewById(R.id.button1);//登录
         Button button2 = findViewById(R.id.button2);//注册
         final EditText editText2=findViewById(R.id.editText2);//用户名
@@ -48,32 +43,58 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         button1.setOnClickListener(new View.OnClickListener() {
-            @Override//所以控件的父类
+            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
 
 
-//                Bundle bundle2 = this.getIntent().getExtras();
-//                String password1 = bundle2.getString("password1");
-//                String username1 = bundle2.getString("username1");
+//                用户名
+                String username1 = editText2.getText().toString();//输入的数据
+                String username2 = data.get(0).getUsername();//正确的用户名
+//                密码
+                String password1 = editText.getText().toString();//输入的密码
+                String password2 = data.get(0).getPassword();//正确的密码
 
-                if(editText2.getText().toString().equals(data.get(0).getUsername())&&editText.getText().toString().equals(data.get(0).getPassword())){
+                //用户名密码是否为空
+                if (username1.equals("") && password1.equals("")) {
+
+                    Toast.makeText(MainActivity.this, "用户名或密码不可为空", Toast.LENGTH_SHORT).show();
+                    //警告框不一致
+                } else {
+
+                    //密码长度是否小于6位
+                    if (password1.length() < 6) {
+
+                        Toast.makeText(MainActivity.this, "密码不可小于6位", Toast.LENGTH_SHORT).show();
+                    } else {
 
 
-             startActivity(intent);
+                        //用户名密码是否正确
+                        if (username1.equals(username2) && password1.equals(password2)) {
 
-        }else{
+                            intent.putExtra("username", username2);
 
-             Toast.makeText(MainActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
-             //警告框不一致
-            }
+                            startActivity(intent);
+
+                        } else {
+
+                            Toast.makeText(MainActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                            //警告框不一致
+                        }
+
+                    }
 
 
+                }
 
 
             }
         });
+
+
+
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override

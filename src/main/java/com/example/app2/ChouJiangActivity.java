@@ -18,10 +18,12 @@ import android.widget.Toast;
 
 public class ChouJiangActivity extends AppCompatActivity {
 
-//测试注释
+
 
     int index = 1;
-    int jpMax = 6;//照片数量
+    int jpMax = 6;;
+    int numInt;
+
     int[] jp = {R.drawable.jp1, R.drawable.jp2, R.drawable.jp3, R.drawable.jp4, R.drawable.jp5, R.drawable.jp6};
 
 
@@ -36,11 +38,13 @@ public class ChouJiangActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.choujiang);
         //如果有暂存值，取出
         if(savedInstanceState != null){
-            index = savedInstanceState.getInt("index");
+           numInt = jpMax-savedInstanceState.getInt("index");
         }
+
 
         final Button button1 = findViewById(R.id.button1);//抽奖
         final Button button2 = findViewById(R.id.button2);//领奖
@@ -62,10 +66,11 @@ public class ChouJiangActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int numInt = Integer.parseInt(String.valueOf(num.getText()));//整型数据
+                 numInt = Integer.parseInt(String.valueOf(num.getText()));//整型数据
 
 //            imageView.setImageResource(R.drawable.jp2);
                 //设置图片抽奖
+                Log.w("numInt", String.valueOf(numInt));
                 if (index < jpMax) {
                     imageView.setImageResource(jp[index]);
                     index++;
