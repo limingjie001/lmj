@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
     @RequestMapping("/index")
-    public String sayHello()
+    public String index( Model model)
     {
+        model.addAttribute("msg","hello,stringboot");
 
 
 
-//        model.addAttribute("msg","hello");
+
         return "index";
     }
 }
