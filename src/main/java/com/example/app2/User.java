@@ -1,5 +1,7 @@
 package com.example.app2;
 
+
+//此类优化之后无任何用处
 public class User {
 
     private      int tel;                  //    手机号

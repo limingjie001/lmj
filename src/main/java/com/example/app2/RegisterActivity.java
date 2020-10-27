@@ -2,6 +2,7 @@ package com.example.app2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +20,6 @@ import static java.lang.String.valueOf;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    private static List<User> data = new ArrayList<>();
 
 
     @Override
@@ -31,8 +31,11 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText tel = findViewById(R.id.editText2);
         final EditText password = findViewById(R.id.editText4);
         final EditText password2=findViewById(R.id.editText3);
-        Button button2 = findViewById(R.id.button2);
+        Button button2 = findViewById(R.id.button2);//注册
 
+
+
+//      登录
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,21 +44,25 @@ public class RegisterActivity extends AppCompatActivity {
                 String password1 = password.getText().toString();//密码
                 String password22 = password2.getText().toString() ;//确认密码
 
-                data.add(new User(tel1, username1, password1));
-                Log.i(username1, " username1");
-                Log.i(password1, " password1");
 
                 Toast.makeText(RegisterActivity.this,"注册成功，请登录",Toast.LENGTH_SHORT).show();
 
                 if(password1.equals(password22)){
+
+
+                    //        登录（文件写入数据）
+                    SharedPreferences sharedPreferences = getSharedPreferences("test",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username",username1);
+                    editor.putString("password",password1);
+                    editor.putInt("tel",tel1);
+                    editor.commit();
+
                     Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
 
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString("username1",username1);
-//                    bundle.putString("password1",password1);
 
 
-               //     intent.putExtra(bundle);
+
                     intent.setClass(RegisterActivity.this,MainActivity.class);
 
                     startActivity(intent);

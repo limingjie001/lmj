@@ -3,6 +3,7 @@ package com.example.app2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,16 +16,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //此处声明变量，可以不先赋值(某些方法在这里面没有）
-    private static List<User> data = new ArrayList<>();
-
-
-    static {
-
-        data.add(new User(123,"aaaaaa","bbbbbb"));
-
-
-    }
+//    private static List<User> data = new ArrayList<>();
+//
+//
+//    static {
+//
+//        data.add(new User(123,"aaaaaa","bbbbbb"));
+//
+//
+//
+//    }
 
 
 
@@ -50,12 +51,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
 
 
-//                用户名
                 String username1 = editText2.getText().toString();//输入的数据
-                String username2 = data.get(0).getUsername();//正确的用户名
-//                密码
+//                String username2 = data.get(0).getUsername();//正确的用户名
                 String password1 = editText.getText().toString();//输入的密码
-                String password2 = data.get(0).getPassword();//正确的密码
+//                String password2 = data.get(0).getPassword();//正确的密码
+
+
+                //获取SharedPreferences对象
+                SharedPreferences sharedPreferences = getSharedPreferences("test",MODE_PRIVATE);
+                //获取值
+                String username3 = sharedPreferences.getString("username","");
+//                读取文件获取正确的登录数据
+                String password3 = sharedPreferences.getString("password","");
+//                判断用户名或者密码正确的方法
+
 
                 //用户名密码是否为空
                 if (username1.equals("") && password1.equals("")) {
@@ -72,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                         //用户名密码是否正确
-                        if (username1.equals(username2) && password1.equals(password2)) {
+                        if (username1.equals(username3) && password1.equals(password3)) {
 
-                            intent.putExtra("username", username2);
+                            intent.putExtra("username", username1);
 
                             startActivity(intent);
 
