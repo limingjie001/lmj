@@ -47,31 +47,36 @@ public class RegisterActivity extends AppCompatActivity {
 
                 Toast.makeText(RegisterActivity.this,"注册成功，请登录",Toast.LENGTH_SHORT).show();
 
-                if(password1.equals(password22)){
+                if(!username1.equals("")&&!password1.equals("")&&!password22.equals("")) {
+                    if (password1.equals(password22)) {
 
 
-                    //        登录（文件写入数据）
-                    SharedPreferences sharedPreferences = getSharedPreferences("test",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("username",username1);
-                    editor.putString("password",password1);
-                    editor.putInt("tel",tel1);
-                    editor.commit();
+                        //登录（文件写入数据）
+                        SharedPreferences sharedPreferences = getSharedPreferences("test", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("username", username1);
+                        editor.putString("password", password1);
+                        editor.putInt("tel", tel1);
+                        editor.commit();
 
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-
-
+                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
 
 
-                    intent.setClass(RegisterActivity.this,MainActivity.class);
+                        intent.setClass(RegisterActivity.this, MainActivity.class);
 
-                    startActivity(intent);
+                        startActivity(intent);
 
+                    } else {
+
+                        Toast.makeText(RegisterActivity.this, "两次密码输入不一致", Toast.LENGTH_SHORT).show();
+                        //警告框不一致
+                    }
                 }else{
 
-                    Toast.makeText(RegisterActivity.this,"两次密码输入不一致",Toast.LENGTH_SHORT).show();
-                    //警告框不一致
+                    Toast.makeText(RegisterActivity.this, "请输入完所有的信息再注册", Toast.LENGTH_SHORT).show();
+                    //警告框不为空
                 }
+
 
 
             }
