@@ -22,12 +22,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:text="@string/JiangPin"
         android:textColor="@android:color/holo_red_light"
         android:textSize="30sp"
@@ -57,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
+        app:layout_constraintVertical_bias="0.958" />
 
     <Button
         android:id="@+id/button2"
@@ -81,9 +82,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <TextView
         android:id="@+id/textView"
@@ -96,7 +98,7 @@
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <TextView
         android:id="@+id/textView9"
@@ -112,12 +114,12 @@
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintGuide_percent="0.9" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

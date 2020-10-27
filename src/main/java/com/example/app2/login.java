@@ -5,16 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.app2.fragment.RegisterFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class login extends AppCompatActivity {
 
 //    private static List<User> data = new ArrayList<>();
 //
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
 
 
         Button button1 = findViewById(R.id.button1);//登录
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
+                Intent intent = new Intent(login.this, MainFragment.class);
 
 
                 String username1 = editText2.getText().toString();//输入的数据
@@ -69,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
                 //用户名密码是否为空
                 if (username1.equals("") && password1.equals("")) {
 
-                    Toast.makeText(MainActivity.this, "用户名或密码不可为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "用户名或密码不可为空", Toast.LENGTH_SHORT).show();
                     //警告框不一致
                 } else {
 
                     //密码长度是否小于6位
                     if (password1.length() < 6) {
 
-                        Toast.makeText(MainActivity.this, "密码不可小于6位", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "密码不可小于6位", Toast.LENGTH_SHORT).show();
                     } else {
 
 
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                         } else {
 
-                            Toast.makeText(MainActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                             //警告框不一致
                         }
 
@@ -108,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(login.this, RegisterFragment.class);
                 startActivity(intent);
             }
         });

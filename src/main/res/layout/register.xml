@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071"
+        app:layout_constraintVertical_bias="0.154"
         app:srcCompat="@drawable/welcome" />
 
     <EditText
@@ -75,11 +75,19 @@
 
     </EditText>
 
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintGuide_percent="0.9" />-->
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
         android:text="重置"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editText3" />
@@ -88,30 +96,23 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView8" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="77dp"
         android:layout_height="34dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/tel"
         android:textColor="#F44336"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <TextView
@@ -140,12 +141,12 @@
         android:id="@+id/textView8"
         android:layout_width="77dp"
         android:layout_height="34dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="104dp"
         android:text="@string/SurePsw"
         android:textColor="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView7" />
 
     <androidx.constraintlayout.widget.Guideline
