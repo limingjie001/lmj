@@ -52,7 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                         //登录（文件写入数据）
+
                         SharedPreferences sharedPreferences = getSharedPreferences("test", MODE_PRIVATE);
+
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("username", username1);
                         editor.putString("password", password1);

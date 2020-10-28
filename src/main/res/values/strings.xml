@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">抽奖小程序2 </string>
     <string name="login">登 录</string>
-    <string name="register">注 册</string>
+    <string name="register">点击注册</string>
     <string name="user">用户名：</string>
     <string name="password">密 码：</string>
     <string name="JiangPin">百万大奖等你拿</string>

@@ -17,16 +17,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private static List<User> data = new ArrayList<>();
-//
-//
-//    static {
-//
-//        data.add(new User(123,"aaaaaa","bbbbbb"));
-//
-//
-//
-//    }
+
 
 
 
@@ -40,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button button1 = findViewById(R.id.button1);//登录
         Button button2 = findViewById(R.id.button2);//注册
-        final EditText editText2=findViewById(R.id.editText2);//用户名
-        final EditText editText=findViewById(R.id.editText);//密码
+        Button button4 = findViewById(R.id.button4);//注销
 
-
+        final EditText editText2 = findViewById(R.id.editText2);//用户名
+        final EditText editText = findViewById(R.id.editText);//密码
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -52,19 +43,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
 
 
-                String username1 = editText2.getText().toString();//输入的数据
-//                String username2 = data.get(0).getUsername();//正确的用户名
-                String password1 = editText.getText().toString();//输入的密码
-//                String password2 = data.get(0).getPassword();//正确的密码
-
+                //        正确的数据
 
                 //获取SharedPreferences对象
-                SharedPreferences sharedPreferences = getSharedPreferences("test",MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences("test", MODE_PRIVATE);
                 //获取值
-                String username3 = sharedPreferences.getString("username","");
+                String username3 = sharedPreferences.getString("username", "");
 //                读取文件获取正确的登录数据
-                String password3 = sharedPreferences.getString("password","");
-//                判断用户名或者密码正确的方法
+                String password3 = sharedPreferences.getString("password", "");
+
+
+//        读取的数据
+
+                String username1 = editText2.getText().toString();//输入的数据
+                String password1 = editText.getText().toString();//输入的密码
 
 
                 //用户名密码是否为空
@@ -104,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +105,39 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+//        注销
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //        正确的数据
+
+                //获取SharedPreferences对象
+                SharedPreferences sharedPreferences = getSharedPreferences("test", MODE_PRIVATE);
+                //获取值
+                String username3 = sharedPreferences.getString("username", "");
+//                读取文件获取正确的登录数据
+                String password3 = sharedPreferences.getString("password", "");
+
+
+                String username1 = editText2.getText().toString();//输入的数据
+                String password1 = editText.getText().toString();//输入的密码
+                if (username1.equals(username3)) {
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.remove("username");
+                    editor.remove("password");
+                    editor.commit();
+
+                    Toast.makeText(MainActivity.this, "已删除该帐号", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(MainActivity.this, "不存在该帐号", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
 
     }
 }
