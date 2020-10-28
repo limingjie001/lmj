@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class ChouJiangActivity extends AppCompatActivity {
 
+//public class ChouJiangActivity extends AppCompatActivity {
 
     int index = 1;
     int jpMax = 6;
@@ -33,11 +34,18 @@ public class ChouJiangActivity extends AppCompatActivity {
         outState.putInt("index", index);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.choujiang);
+
+    //  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        //                             Bundle savedInstanceState) {
+
+
+
         //如果有暂存值，取出
         if (savedInstanceState != null) {
             numInt = jpMax - savedInstanceState.getInt("index");
@@ -111,5 +119,9 @@ public class ChouJiangActivity extends AppCompatActivity {
 
             }
         });
+
+
+    //  return inflater.inflate(R.layout.choujiang, container, false);
+
     }
 }
