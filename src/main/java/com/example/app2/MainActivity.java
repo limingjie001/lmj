@@ -37,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
         final EditText editText = findViewById(R.id.editText);//密码
 
 
+//        登录后不需要再次登录，直接跳转
+        //获取SharedPreferences对象
+        SharedPreferences sharedPreferences = getSharedPreferences("test", MODE_PRIVATE);
+        //获取值
+        if (!sharedPreferences.getString("username", "").equals("")) {
+
+            Intent intent = new Intent(MainActivity.this, ChouJiangActivity.class);
+
+
+            startActivity(intent);
+        }
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
