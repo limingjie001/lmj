@@ -21,6 +21,7 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
+<!-- 由被引入的页面传递参数，如果收到参数，则激活。因为不同的页面传参不一样，所以高亮不一样-->
                 <a class="nav-link active"
                    th:class="${activeUri=='main.html'?'nav-link active':'nav-link'}"
                    href="#" th:href="@{/main.html}">
@@ -52,6 +53,7 @@
                 </a>
             </li>
             <li class="nav-item">
+<!--                此处@{/emps}是请求，由EmployeeController处理-->
                 <a class="nav-link active" href="#" th:href="@{/emps}"
                 th:class="${activeUri=='emps'?'nav-link active':'nav-link'}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
