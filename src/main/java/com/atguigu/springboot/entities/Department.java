@@ -2,6 +2,8 @@ package com.atguigu.springboot.entities;
 
 public class Department {
 
+//	name名要与javabean中的属性名绑定，
+//	注意提交的是属性，不是对象！！
 	private Integer id;
 	private String departmentName;
 

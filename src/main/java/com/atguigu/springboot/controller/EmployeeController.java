@@ -41,7 +41,7 @@ public class EmployeeController {
     }
 
     //员工添加
-    //SpringMVC自动将请求参数和入参对象的属性进行一一绑定；要求请求参数的名字和javaBean入参的对象里面的属性名是一样的
+    //！！SpringMVC自动将请求参数和入参对象的属性进行一一绑定；要求请求参数的名字和javaBean入参的对象里面的属性名是一样的
     @PostMapping("/emp")
     public String addEmp(Employee employee){
         //来到员工列表页面
