@@ -62,9 +62,13 @@
 						3、创建一个input项，name="_method";值就是我们指定的请求方式
 						-->
 
-						<!--name名要与javabean中的属性名绑定，
-						注意提交的是属性，不是对象！！-->
+						<!--注意提交的是属性，不是对象-->
+						<!--name名要与javabean中的属性名绑定，-->
 						<input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
+<!--						1、不能让用户自己填写id
+							2、数据库有id属性，必须把id放进去
+
+-->
 						<input type="hidden" name="id" th:if="${emp!=null}" th:value="${emp.id}">
 						<div class="form-group">
 							<label>LastName</label>

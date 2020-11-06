@@ -78,6 +78,7 @@
 									<td th:text="${emp.department.departmentName}"></td>
 									<td th:text="${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}"></td>
 									<td>
+<!--										拼接字符串，每个员工的id-->
 										<a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">编辑</a>
 										<button th:attr="del_uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn">删除</button>
 									</td>
