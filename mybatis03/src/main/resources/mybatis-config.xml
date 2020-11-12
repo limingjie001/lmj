@@ -3,12 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!--    <settings>-->
-<!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
-<!--    </settings>-->
     <environments default="development">
 <!--        可以写多个环境，但是每次只能生效一个-->
-        
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
@@ -28,6 +24,6 @@
 
 <!--    绑定接口-->
     <mappers>
-        <mapper class="com.mybatis.dao.UserMapper"/>
+        <mapper class="com.mybatis.dao.UserMapper"></mapper>
     </mappers>
 </configuration>

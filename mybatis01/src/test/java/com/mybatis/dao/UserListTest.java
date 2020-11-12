@@ -3,7 +3,6 @@ package com.mybatis.dao;
 import com.mybatis.entry.User;
 import com.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 
 import java.util.List;
