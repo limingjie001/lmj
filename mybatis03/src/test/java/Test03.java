@@ -6,9 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.Date;//是不是这个包？？？
+import java.util.HashMap;
+import java.util.List;
 
 
 public class Test03 {
+
     @Test
     public void addInitBlog() {
         SqlSession session = MyBatisUtils.getSqlSession();
@@ -35,6 +38,21 @@ public class Test03 {
         blog.setTitle("微服务如此简单");
         mapper.addBlog(blog);
         session.commit();
+        session.close();
+    }
+
+    @Test
+    public void testQueryBlogIf(){
+        SqlSession session = MyBatisUtils.getSqlSession();
+        BlogMapper mapper = session.getMapper(BlogMapper.class);
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("title","Spring如此简单");
+        map.put("author","狂神说");
+        List<Blog> blogs = mapper.queryBlogIf(map);
+
+        System.out.println(blogs);
+
         session.close();
     }
 }
