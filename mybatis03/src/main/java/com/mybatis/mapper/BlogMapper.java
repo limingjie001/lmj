@@ -10,4 +10,6 @@ public interface BlogMapper {
     int addBlog(Blog blog);
 //    查询博客
     List<Blog> queryBlogIf(Map map);
+
+    int updateBlog(Map map);
 }

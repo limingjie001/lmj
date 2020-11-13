@@ -14,9 +14,12 @@
     如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询
     select * from blog where title = #{title} and author = #{author}
     -->
+<!--    标签返回的内容是以AND 或OR 开头的，则它会剔除掉AND 或OR。-->
+<!--    比如说第一个条件不成立，第二个条件成立，会剔除掉and或者or-->
     <select id="queryBlogIf" parameterType="mapper" resultType="blog">
         select * from blog
         <where>
+
             <if test="title != null">
                 and title = #{title}
             </if>
@@ -28,4 +31,18 @@
 
     </select>
 
+    <!--注意set是用的逗号隔开-->
+<!--    set标签可以剔除逗号-->
+    <update id="updateBlog" parameterType="mapper">
+        update blog
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="author != null">
+                author = #{author}
+            </if>
+        </set>
+        where id = #{id};
+    </update>
 </mapper>

@@ -47,12 +47,30 @@ public class Test03 {
         BlogMapper mapper = session.getMapper(BlogMapper.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("title","Spring如此简单");
-        map.put("author","狂神说");
+//        map.put("title","Spring如此简单");
+//        map.put("author","狂神说");
         List<Blog> blogs = mapper.queryBlogIf(map);
+        for (Blog blogs1: blogs) {
+            System.out.println(blogs1);
+        }
 
-        System.out.println(blogs);
 
+        session.close();
+    }
+
+    @Test
+    public void testUpdateBlog(){
+        SqlSession session = MyBatisUtils.getSqlSession();
+        BlogMapper mapper = session.getMapper(BlogMapper.class);
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("title","动态SQL");
+        map.put("author","秦疆");
+        //map.put("id","9d6a763f5e1347cebda43e2a32687a77");
+
+        mapper.updateBlog(map);
+
+//        System.out.println(map);
         session.close();
     }
 }
