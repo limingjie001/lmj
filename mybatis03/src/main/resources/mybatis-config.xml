@@ -29,7 +29,6 @@
     </environments>
     <!--每注册一个mapper就写一个-->
 
-
 <!--    绑定接口-->
     <mappers>
 <!--        <mapper class="com.mybatis.mapper.BlogMapper"></mapper>-->

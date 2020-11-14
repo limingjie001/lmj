@@ -5,9 +5,10 @@ import com.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
-import java.util.Date;//是不是这个包？？？
+import java.util.ArrayList;
+import java.util.Date;
 
-//import java.sql.Date;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -73,6 +74,25 @@ public class Test03 {
         mapper.updateBlog(map);
 
 //        System.out.println(map);
+        session.close();
+    }
+
+    @Test
+    public void testQueryBlogForeach(){
+        SqlSession session = MyBatisUtils.getSqlSession();
+        BlogMapper mapper = session.getMapper(BlogMapper.class);
+
+        HashMap map = new HashMap();
+        List<Integer> ids = new ArrayList<Integer>();
+        ids.add(1);
+        ids.add(2);
+        ids.add(3);
+        map.put("ids",ids);
+
+        List<Blog> blogs = mapper.queryBlogForeach(map);
+
+        System.out.println(blogs);
+
         session.close();
     }
 }
