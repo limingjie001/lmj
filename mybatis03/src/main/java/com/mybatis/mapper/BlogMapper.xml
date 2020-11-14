@@ -16,7 +16,7 @@
     -->
 <!--    标签返回的内容是以AND 或OR 开头的，则它会剔除掉AND 或OR。-->
 <!--    比如说第一个条件不成立，第二个条件成立，会剔除掉and或者or-->
-    <select id="queryBlogIf" parameterType="mapper" resultType="blog">
+    <select id="queryBlogIf" parameterType="map" resultType="blog">
         select * from blog
         <where>
 
@@ -33,7 +33,7 @@
 
     <!--注意set是用的逗号隔开-->
 <!--    set标签可以剔除逗号-->
-    <update id="updateBlog" parameterType="mapper">
+    <update id="updateBlog" parameterType="map">
         update blog
         <set>
             <if test="title != null">

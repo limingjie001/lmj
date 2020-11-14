@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.Date;//是不是这个包？？？
+
+//import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -47,7 +49,7 @@ public class Test03 {
         BlogMapper mapper = session.getMapper(BlogMapper.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-//        map.put("title","Spring如此简单");
+        map.put("title","Spring如此简单");
 //        map.put("author","狂神说");
         List<Blog> blogs = mapper.queryBlogIf(map);
         for (Blog blogs1: blogs) {

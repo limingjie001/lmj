@@ -3,10 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+    </settings>
+
     <typeAliases>
-        <typeAlias type="com.mybatis.mapper.BlogMapper" alias="mapper"/>
+
         <typeAlias type="com.mybatis.entry.Blog" alias="blog"/>
     </typeAliases>
+
     <environments default="development">
 <!--        可以写多个环境，但是每次只能生效一个-->
         <environment id="development">
