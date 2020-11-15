@@ -12,12 +12,15 @@
 <!--            开启二级缓存-->
         <setting name="cacheEnabled" value="true"/>
     </settings>
-
+    <!--        别名映射-->
     <typeAliases>
 
-<!--        <typeAlias type="com.mybatis.entry.Blog" alias="blog"/>-->
-<!--        别名映射-->
+<!--        1、<typeAlias type="com.mybatis.entry.Blog" alias="Blog"/>-->
+
+<!--        2、每一个在包 com.mybatis.pojo 中的 Java Bean，在没有注解的情况下，-->
+<!--        会使用 Bean 的首字母小写的非限定类名来作为它的别名。-->
         <package name="com.mybatis.entry"/>
+
     </typeAliases>
 
     <environments default="development">
@@ -37,8 +40,18 @@
 
 <!--    绑定接口-->
     <mappers>
-<!--        <mapper class="com.mybatis.mapper.BlogMapper"></mapper>-->
-        <mapper resource="com/mybatis/mapper/BlogMapper.xml"></mapper>
+
+        <!-- 使用相对于类路径的资源引用 -->
+<!--        <mapper resource="com/mybatis/mapper/BlogMapper.xml"/>-->
+
+<!--        以下两种方式需要配置文件名称和接口名称一致，并且位于同一目录下-->
+
+<!--       1、 使用映射器接口实现类的完全限定类名-->
+
+<!--        <mapper class="com.mybatis.mapper.BlogMapper"/>-->
+<!--       2、将包内的映射器接口实现全部注册为映射器-->
+           <package name="com.mybatis.mapper"/>
+
     </mappers>
 
 
