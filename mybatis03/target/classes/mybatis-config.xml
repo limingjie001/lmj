@@ -6,12 +6,14 @@
 
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
     <typeAliases>
 
-        <typeAlias type="com.mybatis.entry.Blog" alias="blog"/>
+<!--        <typeAlias type="com.mybatis.entry.Blog" alias="blog"/>-->
+<!--        别名映射-->
+        <package name="com.mybatis.entry"/>
     </typeAliases>
 
     <environments default="development">

@@ -57,7 +57,7 @@ public class Test03 {
             System.out.println(blogs1);
         }
 
-
+//        默认开启一级缓存，作用域整个sqlsession
         session.close();
     }
 
@@ -69,11 +69,10 @@ public class Test03 {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("title","动态SQL");
         map.put("author","秦疆");
-        //map.put("id","9d6a763f5e1347cebda43e2a32687a77");
+        map.put("id","2");
 
         mapper.updateBlog(map);
 
-//        System.out.println(map);
         session.close();
     }
 
