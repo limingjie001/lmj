@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 
-public class Test03 {
+public class Test2_2 {
     static float f(float x) {
         float f;
         f = x * x * x - x - 1;

@@ -3,7 +3,7 @@ package com.company;
 import static java.lang.Math.log;
 
 
-public class Test01 {
+public class Test1_1 {
     public static void main(String[] args) {
         float y_0 = (float) (log(6.0) - log(5.0)), y_1;
         int n = 1;

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Test02 {
+public class Test2_1 {
     public static void main(String[] args) {
 
         float y_0 = (float) ((1 / 105.0 + 1 / 126.0) / 2), y_1;

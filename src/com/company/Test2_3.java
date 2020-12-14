@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Test04 {
+public class Test2_3 {
 
 
     private static final int KMAX = 50;
