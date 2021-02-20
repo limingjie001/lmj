@@ -25,7 +25,7 @@ public class ProxyTest {
         System.out.println("演出结果：" + actResult);
     }
 //    测试合并分支
-
+//测试分支合并，非直接祖先分支
 
 
 }
