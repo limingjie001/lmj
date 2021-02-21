@@ -24,6 +24,5 @@ public class ProxyTest {
         String actResult = hg.act("《琅琊榜》");
         System.out.println("演出结果：" + actResult);
     }
-//    测试变基
-//33
+//    revert测试
 }
