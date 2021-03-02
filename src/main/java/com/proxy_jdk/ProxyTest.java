@@ -24,10 +24,5 @@ public class ProxyTest {
         String actResult = hg.act("《琅琊榜》");
         System.out.println("演出结果：" + actResult);
     }
-//    revert测试
-    //版本2
-    //这是版本2的内容
-    //看一下“版本3”这几个字在不在
-    //测试结果，只对版本2有所更改，不影响版本3.
-    //如果使用reset，版本2后面的版本就都没有了
+
 }

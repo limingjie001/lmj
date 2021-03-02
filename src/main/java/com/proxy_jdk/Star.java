@@ -7,3 +7,8 @@ public interface Star {
 
     String act(String teleplay);//表演
 }
+
+
+
+
+
