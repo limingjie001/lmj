@@ -1,9 +1,13 @@
 package com.java8;
 
+import com.reflect.Person;
+import org.junit.Test;
+
+import java.util.List;
 import java.util.Optional;
 
 public class Java8Optional {
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
         Java8Optional java8Tester = new Java8Optional();
         Integer value1 = null;
@@ -14,10 +18,10 @@ public class Java8Optional {
 
         // Optional.of - 如果传递的参数是 null，抛出异常 NullPointerException
         Optional<Integer> b = Optional.of(value2);
-        System.out.println(java8Tester.sum(a,b));
+        System.out.println(java8Tester.sum(a, b));
     }
 
-    public Integer sum(Optional<Integer> a, Optional<Integer> b){
+    public Integer sum(Optional<Integer> a, Optional<Integer> b) {
 
         // Optional.isPresent - 判断值是否存在
 
@@ -30,5 +34,25 @@ public class Java8Optional {
         //Optional.get - 获取值，值需要存在
         Integer value2 = b.get();
         return value1 + value2;
+    }
+
+    @Test
+    public void test1() {
+        Optional<String> optional = Optional.of("str");
+        if (optional.isPresent()) {
+            System.out.println(optional.get());
+        }
+    }
+
+    @Test
+    public void test2() {
+        Optional<String> optional = Optional.of("str2");
+        optional.ifPresent(s -> System.out.println(s));
+    }
+
+
+    @Test
+    public void test3() {
+
     }
 }
