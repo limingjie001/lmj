@@ -15,10 +15,13 @@ public class ProxyFactory implements MethodInterceptor{
         this.object = target;
         //1-Enhancer类是CGLib中的一个字节码增强器，它可以方便的对你想要处理的类进行扩展
         Enhancer enhancer=new Enhancer();
+
         //2-将被代理类HuGe设置成父类
         enhancer.setSuperclass(this.object.getClass());
+
         //3-设置拦截器
         enhancer.setCallback(this);
+
         //4-动态生成一个代理类
         Object objProxy = enhancer.create();
 
