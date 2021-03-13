@@ -14,6 +14,7 @@ public class JedisUtils {
     private static int maxIdle;
 
     static {
+        //防止重复加载
         ResourceBundle rb = ResourceBundle.getBundle("redis");
         host = rb.getString("redis.host");
         port = Integer.parseInt(rb.getString("redis.port"));

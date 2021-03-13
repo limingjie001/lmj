@@ -1,9 +1,6 @@
 package com.list;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Student extends Thread implements Comparable {
     private int age;
@@ -39,6 +36,9 @@ public class Student extends Thread implements Comparable {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
+
+
+
         /*
          * 使用Collections的sort方法让集合排序，使用其方法必须要重写
          * Comparable接口的compareTo()方法
