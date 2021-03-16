@@ -7,18 +7,20 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 扫描service相关的bean -->
+    <!-- 1.扫描service相关的bean -->
     <context:component-scan base-package="com.lmj.service" />
 
+    <!-- 2.把所有的业务注入类注入spring，可以通过配置或者注解实现-->
     <!--BookServiceImpl注入到IOC容器中-->
     <bean id="BookServiceImpl" class="com.lmj.service.BookServiceImpl">
         <property name="bookMapper" ref="bookMapper"/>
     </bean>
 
-    <!-- 配置事务管理器 -->
+    <!-- 3.配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->
         <property name="dataSource" ref="dataSource" />
     </bean>
+    <!--4.aop事务支持-->
 
 </beans>
