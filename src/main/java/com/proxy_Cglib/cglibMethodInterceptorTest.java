@@ -1,8 +1,9 @@
 package com.proxy_Cglib;
 
-import org.junit.Test;
+
 
 import net.sf.cglib.proxy.Enhancer;
+import org.junit.jupiter.api.Test;
 
 public class cglibMethodInterceptorTest {
 

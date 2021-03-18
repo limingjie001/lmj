@@ -1,7 +1,7 @@
 package com.proxy_jdk;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ProxyTest {
     //测试代理类1

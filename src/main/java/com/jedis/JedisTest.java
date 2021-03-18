@@ -1,6 +1,6 @@
 package com.jedis;
 
-import org.junit.Test;
+
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
