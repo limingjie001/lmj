@@ -18,4 +18,12 @@ public class MyTest {
         userService.add();
     }
 
+    @Test
+    public void TestAop3(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aop.xml");
+        UserService userService=(UserService) applicationContext.getBean("userService");
+        userService.add();
+    }
+
+
 }

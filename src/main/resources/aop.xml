@@ -2,16 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--注册bean-->
-    <bean id="userService" class="com.springAOP.method1.UserServiceImpl"/>
+    <!--    <bean id="userService" class="com.springAOP.method1.UserServiceImpl"/>-->
     <bean id="log" class="com.springAOP.method1.Log"/>
     <bean id="afterLog" class="com.springAOP.method1.AfterLog"/>
     <bean id="diy" class="com.springAOP.method2.DiyPointCut"/>
+    <context:component-scan base-package="com.springAOP"/>
+
+    <!-- 开启注解支持-->
+    <context:annotation-config/>
+    <!--声明自动为spring容器中那些配置@aspectJ切面的bean创建代理，织入切面-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!--aop的配置1-->
     <aop:config>
@@ -27,10 +34,13 @@
     <!--aop的配置2-->
     <aop:config>
         <aop:pointcut id="diyPointcut2" expression="execution(* com.springAOP.method1.UserServiceImpl.*(..))"/>
-        <aop:aspect ref="diy" >
+        <aop:aspect ref="diy">
             <aop:before method="before" pointcut-ref="diyPointcut2"/>
         </aop:aspect>
     </aop:config>
+
+    <!--aop的配置3-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 
 </beans>

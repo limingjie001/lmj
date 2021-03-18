@@ -1,5 +1,8 @@
 package com.springAOP.method1;
 
+import org.springframework.stereotype.Component;
+
+@Component("userService")
 public class UserServiceImpl implements UserService{
 
     @Override
