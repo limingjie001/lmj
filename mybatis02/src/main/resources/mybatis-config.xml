@@ -28,6 +28,6 @@
 
 <!--    绑定接口-->
     <mappers>
-        <mapper class="com.mybatis.dao.UserMapper"/>
+        <mapper class="com.mybatis.mapper.UserMapper"/>
     </mappers>
 </configuration>

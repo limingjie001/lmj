@@ -3,31 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!--    <settings>-->
-<!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
-<!--    </settings>-->
+
+    <typeAliases>
+        <package name="com.lmj.pojo"/>
+    </typeAliases>
+
     <environments default="development">
-<!--        可以写多个环境，但是每次只能生效一个-->
-        
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
         </environment>
-
     </environments>
-    <!--每注册一个mapper就写一个-->
-<!--    此处使用注解，不需要mappers-->
-<!--    <mappers>-->
-<!--        <mapper resource="com/mybatis/dao/UserMapper.xml"/>-->
-<!--    </mappers>-->
 
-<!--    绑定接口-->
     <mappers>
-        <mapper class="com.mybatis.mapper.UserMapper"/>
+        <package name="com.lmj.dao"/>
     </mappers>
 </configuration>

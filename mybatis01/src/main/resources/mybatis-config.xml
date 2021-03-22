@@ -2,7 +2,15 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
+
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+        <package name="com.mybatis.entry"/>
+    </typeAliases>
     <environments default="development">
 <!--        可以写多个环境，但是每次只能生效一个-->
         <environment id="development">
@@ -18,6 +26,6 @@
     </environments>
 <!--每注册一个mapper就写一个-->
     <mappers>
-        <mapper resource="com/mybatis/dao/UserMapper.xml"/>
+        <package name="com.mybatis.mapper"/>
     </mappers>
 </configuration>

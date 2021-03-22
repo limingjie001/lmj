@@ -1,4 +1,4 @@
-import com.mybatis.dao.UserMapper;
+import com.mybatis.mapper.UserMapper;
 import com.mybatis.entry.User;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;

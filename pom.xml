@@ -12,6 +12,9 @@
         <module>mybatis01</module>
         <module>mybatis02</module>
         <module>mybatis03</module>
+        <module>mybatis-spring</module>
+        <module>mybatis-transaction</module>
+        <module>mybatis-spring2</module>
     </modules>
 
     <dependencies>

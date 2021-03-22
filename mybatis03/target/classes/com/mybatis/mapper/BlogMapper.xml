@@ -2,7 +2,20 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置文件中namespace中的名称为对应Mapper接口或者Dao接口的完整包名,必须一致！-->
 <mapper namespace="com.mybatis.mapper.BlogMapper">
+
+    <!--    结果集映射-->
+<!--
+    如果实体类的变量名与数据库表的列名不一样，可以使用映射。
+    resultType填写resultMap的id
+-->
+    <resultMap id="UserMap" type="User">
+
+        <id column="id" property="id"/>
+        <!-- column是数据库表的列名 , property是对应实体类的属性名 -->
+
+    </resultMap>
 
 <!--    开启二级缓存，作用域整个mapper-->
     <cache/>
