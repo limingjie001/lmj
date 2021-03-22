@@ -14,24 +14,11 @@ import java.util.List;
 
 public class MyTest {
     @Test
-    public void selectUser() throws IOException {
-
-        String resource = "mybatis-config.xml";
-        SqlSessionFactory sqlSessionFactory;
-        try (
-                InputStream inputStream = Resources.getResourceAsStream(resource)) {
-            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        }
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-        List<User> userList = mapper.selectUser();
-        for (User user: userList){
-            System.out.println(user);
-        }
-
-        sqlSession.close();
+    public void test2(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        UserMapper mapper = (UserMapper) context.getBean("userDao");
+        List<User> user = mapper.selectUser();
+        System.out.println(user);
     }
 
 

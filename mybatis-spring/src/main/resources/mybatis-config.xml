@@ -20,7 +20,5 @@
         </environment>
     </environments>
 
-    <mappers>
-        <package name="com.lmj.dao"/>
-    </mappers>
+
 </configuration>

@@ -22,7 +22,8 @@
         </environment>
     </environments>
 
-    <mappers>
-        <package name="com.lmj.dao"/>
-    </mappers>
+<!--    mybatis和spring都扫描了一遍，就会出错-->
+<!--    <mappers>-->
+<!--        <package name="com.lmj.dao"/>-->
+<!--    </mappers>-->
 </configuration>
