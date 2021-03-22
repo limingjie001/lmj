@@ -1,5 +1,5 @@
-import lmj.dao.UserMapper;
-import lmj.pojo.User;
+import com.lmj.dao.UserMapper;
+import com.lmj.pojo.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

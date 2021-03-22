@@ -1,8 +1,8 @@
-package lmj.dao;
+package com.lmj.dao;
 
 
 
-import lmj.pojo.User;
+import com.lmj.pojo.User;
 
 import java.util.List;
 

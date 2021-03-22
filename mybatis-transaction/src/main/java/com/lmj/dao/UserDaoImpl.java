@@ -1,9 +1,8 @@
-package lmj.dao;
+package com.lmj.dao;
 
 
 
-import lmj.pojo.User;
-import org.mybatis.spring.SqlSessionTemplate;
+import com.lmj.pojo.User;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserMapper {
         User user = new User(4,"小明","123456");
         UserMapper mapper = getSqlSession().getMapper(UserMapper.class);
         mapper.addUser(user);
-        mapper.deleteUser(4);
+        mapper.deleteUser(5);
         return mapper.selectUser();
     }
 
