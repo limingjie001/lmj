@@ -17,5 +17,7 @@ public class ThreadDemo{
         Thread t1 = new Thread(my,"线程A");
         t1.start();
 //        new Thread(my,"线程A").start();  //手工设置线程名称
+
+
     }
 };
