@@ -1,4 +1,4 @@
-package com.test.proxy_jdk;
+package proxy_jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.test.proxy_cjlib;
+package proxy_cjlib;
 
 import com.reflect.Person;
 import net.sf.cglib.proxy.Enhancer;

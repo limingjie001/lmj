@@ -1,4 +1,4 @@
-package com.test.proxy_cjlib;
+package proxy_cjlib;
 
 import org.junit.jupiter.api.Test;
 

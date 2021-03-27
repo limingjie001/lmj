@@ -1,4 +1,4 @@
-package com.test.proxy_jdk;
+package proxy_jdk;
 
 public class HuGe implements Star{
     @Override

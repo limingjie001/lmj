@@ -1,4 +1,4 @@
-package com.test.proxy_cjlib;
+package proxy_cjlib;
 
 public class Huge {
     public void sing(String song) {

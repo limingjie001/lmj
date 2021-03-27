@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MyTest {
+public class AopTest {
     @Test
     public void TestAop1(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aop.xml");

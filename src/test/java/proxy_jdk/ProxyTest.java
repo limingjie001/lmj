@@ -1,4 +1,4 @@
-package com.test.proxy_jdk;
+package proxy_jdk;
 
 import org.junit.jupiter.api.Test;
 

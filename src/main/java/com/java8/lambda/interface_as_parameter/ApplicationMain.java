@@ -1,4 +1,4 @@
-package com.interface_as_parameter;
+package com.java8.lambda.interface_as_parameter;
 
 public class ApplicationMain {
     public static void main(String[] args) {
