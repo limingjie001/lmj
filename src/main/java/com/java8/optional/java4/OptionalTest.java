@@ -1,4 +1,4 @@
-package com.java8.stream.java4;
+package com.java8.optional.java4;
 
 import org.junit.Test;
 

@@ -1,10 +1,8 @@
-package com.java8;
+package com.java8.optional;
 
-import com.reflect.Person;
 import org.junit.jupiter.api.Test;
 //import org.junit.Test;
 
-import java.util.List;
 import java.util.Optional;
 
 public class Java8Optional {
