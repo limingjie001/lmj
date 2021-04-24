@@ -15,9 +15,9 @@ public class ReflectTest {
         /*
             前提：不能改变该类的任何代码。可以创建任意类的对象，可以执行任意方法
          */
-      /*  Person p = new Person();
-        p.eat();*/
-/*
+        /*  Person p = new Person();
+            p.eat();*/
+        /*
         Student stu = new Student();
         stu.sleep();*/
 
