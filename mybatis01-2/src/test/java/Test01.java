@@ -21,4 +21,13 @@ public class Test01 {
         System.out.println(teacher.getName());
         System.out.println(teacher.getStudents());
     }
+
+    @Test
+    public void testGetTeacher2(){
+        SqlSession session = MyBatisUtils.getSqlSession();
+        TeacherMapper mapper = session.getMapper(TeacherMapper.class);
+        Teacher teacher = mapper.getTeacher2(1);
+        System.out.println(teacher.getName());
+        System.out.println(teacher.getStudents());
+    }
 }
