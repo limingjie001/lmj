@@ -14,6 +14,7 @@
         <module name="mysql" />
         <module name="mybatis02" />
         <module name="mybatis-spring" />
+        <module name="mybatis01-2" />
       </profile>
     </annotationProcessing>
   </component>

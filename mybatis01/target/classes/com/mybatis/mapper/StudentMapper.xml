@@ -15,6 +15,7 @@
               4. 查看官网找到：association – 一个复杂类型的关联；使用它来处理关联查询
       -->
 <mapper namespace="com.mybatis.mapper.StudentMapper">
+    <!--    按查询嵌套处理-->
     <select id="getStudents" resultMap="temp">
         select *
         from student
