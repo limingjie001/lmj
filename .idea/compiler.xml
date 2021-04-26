@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mybatis-transaction" />
+        <module name="mybatis-spring2" />
         <module name="mybatis03" />
         <module name="mybatis01" />
-        <module name="mybatis-transaction" />
+        <module name="mysql" />
         <module name="mybatis02" />
         <module name="mybatis-spring" />
-        <module name="mybatis-spring2" />
       </profile>
     </annotationProcessing>
   </component>

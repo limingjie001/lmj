@@ -10,7 +10,7 @@
     如果实体类的变量名与数据库表的列名不一样，可以使用映射。
     resultType填写resultMap的id
 -->
-    <resultMap id="UserMap" type="User">
+    <resultMap id="BlogMap" type="Blog">
 
         <id column="id" property="id"/>
         <!-- column是数据库表的列名 , property是对应实体类的属性名 -->

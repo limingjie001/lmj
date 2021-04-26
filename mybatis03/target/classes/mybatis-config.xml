@@ -45,9 +45,7 @@
 <!--        <mapper resource="com/mybatis/mapper/BlogMapper.xml"/>-->
 
 <!--        以下两种方式需要配置文件名称和接口名称一致，并且位于同一目录下-->
-
 <!--       1、 使用映射器接口实现类的完全限定类名-->
-
 <!--        <mapper class="com.mybatis.mapper.BlogMapper"/>-->
 <!--       2、将包内的映射器接口实现全部注册为映射器-->
            <package name="com.mybatis.mapper"/>
